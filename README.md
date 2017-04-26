@@ -1,4 +1,4 @@
-#CSP Middleware
+# CSP Middleware
 
 Add Content-Security-Policy headers for PSR-7 requests. Uses the csp-builder library paragonie/csp-builder.
 
