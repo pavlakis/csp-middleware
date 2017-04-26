@@ -1,0 +1,38 @@
+{
+  "name": "pavlakis/csp-middleware",
+  "description": "Add Content-Security-Policy headers for PSR-7 requests. Uses the csp-builder library paragonie/csp-builder.",
+  "keywords": [
+    "csp", "content security policy", "header", "security", "middleware"
+  ],
+  "homepage": "http://github.com/pavlakis/csp-middleware",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Adoni Pavlakis",
+      "email": "adoni@pavlakis.info"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Pavlakis\\Tests\\Middleware\\Csp\\" : "tests/phpunit",
+      "Pavlakis\\Middleware\\Csp\\": "src"
+    }
+  },
+  "require": {
+    "php": "^7.0|^7.1",
+    "paragonie/csp-builder": "^2.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.3",
+    "psr/http-message": "^1.0",
+    "phpunit/phpunit": "^6.1",
+    "mockery/mockery": "^0.9.9"
+  },
+  "config": {
+    "bin-dir": "bin",
+    "preferred-install": {
+      "*": "dist"
+    }
+  }
+}

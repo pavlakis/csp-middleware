@@ -1,0 +1,8 @@
+language: php
+php:
+  - 7.1
+  - 7.0
+install: composer install
+before_script: bin/php-cs-fixer fix --dry-run --diff
+script: ./bin/phpunit -c tests/phpunit/phpunit.xml
+
