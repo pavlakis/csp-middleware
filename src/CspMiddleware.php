@@ -19,7 +19,7 @@ use Psr\Http\Message\ServerRequestInterface;
 class CspMiddleware
 {
     const CSP_HEADER_ENABLE = 'Content-Security-Policy';
-    const CSP_HEADER_REPORT_ONLY = 'Content-Security-Policy';
+    const CSP_HEADER_REPORT_ONLY = 'Content-Security-Policy-Report-Only';
 
     /**
      * @var CSPBuilder
