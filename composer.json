@@ -15,7 +15,6 @@
   ],
   "autoload": {
     "psr-4": {
-      "Pavlakis\\Tests\\Middleware\\Csp\\" : "tests/phpunit",
       "Pavlakis\\Middleware\\Csp\\": "src"
     }
   },
@@ -23,11 +22,15 @@
     "php": "^7.0|^7.1",
     "paragonie/csp-builder": "^2.0"
   },
+  "autoload-dev": {
+    "Pavlakis\\Tests\\Middleware\\Csp\\" : "tests/phpunit"
+  },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.3",
     "psr/http-message": "^1.0",
     "phpunit/phpunit": "^6.1",
-    "mockery/mockery": "^0.9.9"
+    "container-interop/container-interop": "^1.2",
+    "slim/slim": "^3.8"
   },
   "config": {
     "bin-dir": "bin",
