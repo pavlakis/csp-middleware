@@ -4,6 +4,50 @@ Add Content-Security-Policy headers for PSR-7 requests. Uses the csp-builder lib
 
 ### Usage
 
+Use a `json` file with the csp policies.
+
+Example:
+
+```json
+{
+  "report-only": false,
+  "report-uri": "/csp/enforce",
+  "base-uri": [],
+  "default-src": [],
+  "child-src": {
+    "self": false
+  },
+  "connect-src": {},
+  "font-src": {
+    "self": true
+  },
+  "form-action": {
+    "self": true
+  },
+  "frame-ancestors": [],
+  "img-src": {
+    "self": true
+  },
+  "media-src": [],
+  "object-src": [],
+  "plugin-types": [],
+  "script-src": {
+    "allow": [
+      "https://www.google-analytics.com"
+    ],
+    "self": true,
+    "unsafe-inline": false,
+    "unsafe-eval": false
+  },
+  "style-src": {
+    "self": true,
+    "unsafe-inline": false
+  },
+  "upgrade-insecure-requests": true
+}
+
+```
+
 Example in Slim3
 
 **Dependencies (dependencies.php)**
