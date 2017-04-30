@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/pavlakis/csp-middleware.svg)](https://travis-ci.org/pavlakis/csp-middleware)
 [![Total Downloads](https://img.shields.io/packagist/dt/pavlakis/csp-middleware.svg)](https://packagist.org/packages/pavlakis/csp-middleware)
 [![Latest Stable Version](https://img.shields.io/packagist/v/pavlakis/csp-middleware.svg)](https://packagist.org/packages/pavlakis/csp-middleware)
+[![codecov](https://codecov.io/gh/pavlakis/csp-middleware/branch/master/graph/badge.svg)](https://codecov.io/gh/pavlakis/csp-middleware)
+
 
 # CSP Middleware
 
