@@ -9,13 +9,10 @@ namespace Pavlakis\Tests\Middleware\Csp;
 
 use ParagonIE\CSPBuilder\CSPBuilder;
 use Pavlakis\Middleware\Csp\CspMiddleware;
+use Pavlakis\Tests\Middleware\Csp\Factory\RequestFactory;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Slim\Http\Body;
-use Slim\Http\Headers;
-use Slim\Http\Request;
-use Slim\Http\Uri;
 
 class CspMiddlewareTest extends TestCase
 {
@@ -25,13 +22,13 @@ class CspMiddlewareTest extends TestCase
     private $mockResponse;
 
     /**
-     * @var Request
+     * @var ServerRequestInterface
      */
     private $request;
 
     public function setUp()
     {
-        $this->request = $this->requestFactory();
+        $this->request = RequestFactory::createRequest();
         $this->mockResponse = $this->getMockBuilder(ResponseInterface::class)->setMethods(['withAddedHeader']);
     }
 
@@ -72,19 +69,4 @@ class CspMiddlewareTest extends TestCase
 
         $cspMiddleware($request, $response, $next);
     }
-
-    /**
-     * Taken from: https://github.com/slimphp/Slim-HttpCache/blob/master/tests/CacheTest.php
-     * @return Request
-     */
-    public function requestFactory()
-    {
-        $uri = Uri::createFromString('https://example.com:443/foo/bar?abc=123');
-        $headers = new Headers();
-        $cookies = [];
-        $serverParams = [];
-        $body = new Body(fopen('php://temp', 'r+'));
-        return new Request('GET', $uri, $headers, $cookies, $serverParams, $body);
-    }
-
 }
