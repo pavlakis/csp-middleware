@@ -23,26 +23,8 @@ class CspMiddleware
     public const CSP_HEADER_ENABLE = 'Content-Security-Policy';
     public const CSP_HEADER_REPORT_ONLY = 'Content-Security-Policy-Report-Only';
 
-    /**
-     * @var CSPBuilder
-     */
-    private $cspBuilder;
-
-    /**
-     * @var bool
-     */
-    private $reportOnly;
-
-    /**
-     * CspMiddleware constructor.
-     *
-     * @param CSPBuilder $cspBuilder
-     * @param bool       $reportOnly
-     */
-    public function __construct(CSPBuilder $cspBuilder, $reportOnly = true)
+    public function __construct(private readonly CSPBuilder $cspBuilder, private readonly bool $reportOnly = true)
     {
-        $this->cspBuilder = $cspBuilder;
-        $this->reportOnly = $reportOnly;
     }
 
     /**
@@ -54,7 +36,7 @@ class CspMiddleware
      *
      * @return ResponseInterface PSR7 response object
      */
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next)
+    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next): ResponseInterface
     {
         $header = static::CSP_HEADER_ENABLE;
         if ($this->reportOnly) {
