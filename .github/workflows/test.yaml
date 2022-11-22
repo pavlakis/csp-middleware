@@ -10,11 +10,8 @@ jobs:
         run:  composer install --prefer-dist --no-progress --no-suggest
       - name: run phpunit
         run:  composer test
-  coverage:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: codecov/codecov-action@v3
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v2
         with:
-          flags: unittests # optional
-          verbose: true # optional (default = false)
+          files: ./coverage.xml
+          verbose: true
