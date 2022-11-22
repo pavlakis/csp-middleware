@@ -35,7 +35,7 @@
     "phpstan/phpstan": "^1.9"
   },
   "scripts": {
-    "test": "phpunit -c tests/phpunit/phpunit.xml --colors=always",
+    "test": "phpunit --colors=always",
     "fix-styles": "php-cs-fixer fix --allow-risky=yes",
     "check-styles": "php-cs-fixer fix --allow-risky=yes --dry-run",
     "run-static-analysis": "phpstan analyse src/"
